@@ -1,0 +1,28 @@
+<?php
+header("Content-Type: application/json");
+
+// Enable error reporting for debugging (remove in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Database connection
+$conn = new mysqli('localhost', 'root', '', 'hotel');
+if ($conn->connect_error) {
+    echo json_encode(['error' => 'Database connection failed: ' . $conn->connect_error]);
+    exit();
+}
+
+$sql = "SELECT id, title, location, description, status, price, image FROM resort";
+$result = $conn->query($sql);
+
+$resorts = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $resorts[] = $row;
+    }
+}
+
+echo json_encode($resorts); // Return only the resorts array
+
+$conn->close();
+?>
