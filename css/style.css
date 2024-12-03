@@ -42,7 +42,8 @@ body{
 }
 .logo{
 	float:left;
-	margin-top: 0.8em;
+	height: 10px;
+	width: 10px;
 }
 
 .contact-info{

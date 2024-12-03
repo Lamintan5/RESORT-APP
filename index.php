@@ -5,11 +5,11 @@ session_start();
 <html>
 	<head>
 		<title>Hotel Website | Home</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/responsiveslides.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/responsiveslides.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"/>
 		  <script>
 			    $(function () {
@@ -53,13 +53,9 @@ session_start();
 				font-size: 16px;
 			}
 
-			
-			.hdlg{
-				font-family: 'PT Sans Narrow', sans-serif;
-				font-size: 1.3em;
-				font-weight: 400;
-				color: #3B3B3B;
-				text-transform: uppercase;
+			.logo{
+				height: 150px;
+				width: 150px;
 			}
 
 		  </style>
@@ -71,7 +67,7 @@ session_start();
 				<div class="wrap">
 					<div class="header-top">
 						<div class="logo">
-							<p class="hdlg">Mums Garden Resort</p>
+							<a href="index.php"><img src="images/logo.png " title="logo" /></a>
 						</div>
 						<div class="contact-info">
 							<p class="phone">Call us : <a href="#">980XXXXXXX</a></p>
