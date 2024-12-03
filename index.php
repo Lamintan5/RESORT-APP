@@ -53,6 +53,15 @@ session_start();
 				font-size: 16px;
 			}
 
+			
+			.hdlg{
+				font-family: 'PT Sans Narrow', sans-serif;
+				font-size: 1.3em;
+				font-weight: 400;
+				color: #3B3B3B;
+				text-transform: uppercase;
+			}
+
 		  </style>
 	</head>
 	<body>
@@ -62,7 +71,7 @@ session_start();
 				<div class="wrap">
 					<div class="header-top">
 						<div class="logo">
-							<a href="index.php"><img src="img/logo " title="logo" /></a>
+							<p class="hdlg">Mums Garden Resort</p>
 						</div>
 						<div class="contact-info">
 							<p class="phone">Call us : <a href="#">980XXXXXXX</a></p>
