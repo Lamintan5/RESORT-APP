@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>gallery</h3>
 				</div>
 				<div class="resorts-grid">
-					<!-- Resort cards will be dynamically inserted here -->
+					
 				</div>
 			</section>
 			
@@ -79,15 +79,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				const grid = document.querySelector('.resorts-grid');
 				const resortSection = document.querySelector('.resorts-section'); 
-				grid.innerHTML = ''; // Clear any existing content
+				grid.innerHTML = ''; 
 
 				if (resorts.length === 0) {
-					resortSection.style.display = 'none'; // Hide section if no resorts
+					resortSection.style.display = 'none';
 					return;
 				}
-				resortSection.style.display = 'block'; // Show section if resorts are present
-
-				// Loop through the resorts and display them in the grid
+				resortSection.style.display = 'block';
 				resorts.forEach(resort => {
 					const card = document.createElement('div');
 					card.classList.add('gallery-grid');

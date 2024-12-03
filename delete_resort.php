@@ -1,7 +1,6 @@
 <?php
 header("Content-Type: application/json");
 
-// Database connection
 $conn = new mysqli('localhost', 'root', '', 'hotel');
 if ($conn->connect_error) {
     echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . $conn->connect_error]);

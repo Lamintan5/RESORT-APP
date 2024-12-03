@@ -12,9 +12,8 @@ $username = isset($_SESSION['user']) ? $_SESSION['user']['username'] : null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resort Details</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Basic layout for the resort details page */
         .resort-details {
             padding: 40px;
             display: flex;
@@ -136,7 +135,6 @@ $username = isset($_SESSION['user']) ? $_SESSION['user']['username'] : null;
         </div>
     </div>
 
-    <!-- Booking Form Section -->
     <div class="booking-container">
         <h3>Book Your Stay</h3>
         <form id="bookingForm" onsubmit="submitBooking(event)">
@@ -174,7 +172,6 @@ $username = isset($_SESSION['user']) ? $_SESSION['user']['username'] : null;
 </section>
 
 <script>
-// Fetch resort details
 async function fetchResortDetails() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
@@ -185,8 +182,6 @@ async function fetchResortDetails() {
 
         if (data.success) {
             const resort = data.data;
-
-            // Populate the resort details in the HTML
             document.getElementById('resortImage').src = resort.image;
             document.getElementById('resortTitle').innerText = resort.title;
             document.getElementById('resortLocation').innerText = resort.location;
@@ -201,18 +196,14 @@ async function fetchResortDetails() {
     }
 }
 
-// Handle booking form submission
 function submitBooking(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Get form data
+    event.preventDefault(); 
     const checkInDate = document.getElementById('checkInDate').value;
     const checkOutDate = document.getElementById('checkOutDate').value;
     const creditCardNumber = document.getElementById('creditCardNumber').value;
     const creditCardExpiry = document.getElementById('creditCardExpiry').value;
     const creditCardCVV = document.getElementById('creditCardCVV').value;
 
-    // For now, just log the data to the console (this can be replaced with actual form submission logic)
     console.log({
         checkInDate,
         checkOutDate,
@@ -223,21 +214,18 @@ function submitBooking(event) {
 
     alert('Booking request submitted!');
 
-    // Optionally, you can send this data to the server or use an API to handle payments.
 }
 
 window.onload = fetchResortDetails;
 
 async function submitBooking(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); 
 
-    // Get form data
     const checkInDate = document.getElementById('checkInDate').value;
     const checkOutDate = document.getElementById('checkOutDate').value;
     const paymentMethod = document.getElementById('paymentMethod').value;
     const resortId = new URLSearchParams(window.location.search).get('id');
     
-    // Prepare data to send to the server
     const formData = new FormData();
     formData.append('checkInDate', checkInDate);
     formData.append('checkOutDate', checkOutDate);
@@ -253,10 +241,10 @@ async function submitBooking(event) {
         const result = await response.json();
 
         if (result.success) {
-            alert(result.message);  // Show success message
-            window.location.href = 'index.php'; // Redirect to index.php on success
+            alert(result.message);  
+            window.location.href = 'index.php';
         } else {
-            alert(result.message);  // Show error message
+            alert(result.message); 
         }
     } catch (error) {
         console.error('Error submitting booking:', error);

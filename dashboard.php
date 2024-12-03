@@ -178,7 +178,6 @@ session_start();
         });
     </script>
     <script>
-// Fetch and display booking data
 document.addEventListener('DOMContentLoaded', function() {
     fetchBookings();
 });
@@ -189,7 +188,7 @@ function fetchBookings() {
         .then(data => {
             if (data.success) {
                 const bookingsTableBody = document.querySelector('#bookings-table tbody');
-                bookingsTableBody.innerHTML = ''; // Clear the table before adding new data
+                bookingsTableBody.innerHTML = ''; 
                 data.data.forEach(booking => {
                     const row = document.createElement('tr');
 
@@ -215,11 +214,9 @@ function fetchBookings() {
         });
 }
 
-// Function to cancel booking
 function cancelBooking(bookingId) {
     const confirmCancel = confirm("Are you sure you want to cancel this booking?");
     if (confirmCancel) {
-        // Call cancel_booking.php to update the booking status in the database
         fetch('cancel_booking.php', {
             method: 'POST',
             headers: {
@@ -231,7 +228,7 @@ function cancelBooking(bookingId) {
         .then(data => {
             if (data.success) {
                 alert('Booking canceled successfully');
-                fetchBookings(); // Refresh the bookings table
+                fetchBookings();
             } else {
                 alert('Error canceling booking');
             }
@@ -244,7 +241,6 @@ function cancelBooking(bookingId) {
 </script>
 
 <script>
-// Fetch and display payment data
 document.addEventListener('DOMContentLoaded', function() {
     fetchPayments();
 });
@@ -255,7 +251,7 @@ function fetchPayments() {
         .then(data => {
             if (data.success) {
                 const paymentsTableBody = document.querySelector('#payments-table tbody');
-                paymentsTableBody.innerHTML = ''; // Clear the table before adding new data
+                paymentsTableBody.innerHTML = ''; 
                 data.data.forEach(payment => {
                     const row = document.createElement('tr');
 

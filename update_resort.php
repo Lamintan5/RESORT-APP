@@ -1,7 +1,6 @@
 <?php
 header("Content-Type: application/json");
 
-// Database connection
 $conn = new mysqli('localhost', 'root', '', 'hotel');
 if ($conn->connect_error) {
     echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . $conn->connect_error]);
@@ -15,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST['price'];
     $description = $_POST['description'];
 
-    // Handle image upload if provided
     $imagePath = null;
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $image = $_FILES['image'];
@@ -25,8 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     }
-
-    // Update query
     $sql = "UPDATE resort SET 
             title = '$title', 
             location = '$location', 

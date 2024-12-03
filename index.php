@@ -12,10 +12,8 @@ session_start();
 		<script src="js/responsiveslides.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"/>
 		  <script>
-		    // You can also use "$(window).load(function() {"
 			    $(function () {
 			
-			      // Slideshow 1
 			      $("#slider1").responsiveSlides({
 			        maxwidth: 1600,
 			        speed: 600

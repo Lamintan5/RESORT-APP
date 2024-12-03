@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Toastify CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
-    <!-- Toastify JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <title>Auth</title>
@@ -70,8 +67,6 @@
               <h3 class="title"id="form-title">Sign In</h3>
               <p class="mb-4">Welcome back! Please login to your account.</p>
 
-
-                <!-- Sign In Form -->
                 <div id="signin-form" class="form-container active">
                   <div class="mb-4">
                   </div>
@@ -100,7 +95,6 @@
                   
                 </div>
 
-                <!-- Register Form -->
                 <div id="register-form" class="form-container">
                     <form action="register.php" method="post">
                       <input type="hidden" name="action" value="register">
