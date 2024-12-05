@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 
 if (isset($_POST['id'])) {
     $id = intval($_POST['id']);
-    $sql = "DELETE FROM resort WHERE id = $id";
+    $sql = "DELETE FROM resort WHERE rid = $id";
     if ($conn->query($sql) === TRUE) {
         echo json_encode(['success' => true, 'message' => 'Resort deleted successfully']);
     } else {
